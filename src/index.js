@@ -72,11 +72,11 @@ module.exports = class FaviconsWebpackPlugin {
       
       // Hook into the html-webpack-plugin processing and add the html
       tapHtml(compilation, 'FaviconsWebpackPlugin', (htmlPluginData, htmlWebpackPluginCallback) => {
-        if (this.options.excludeManifestInjection) {
-          tags = tags.filter(tag => tag.indexOf("manifest.json") < 0);
-        }
         faviconCompilation.then((tags) => {
           if (this.options.inject(htmlPluginData.plugin)) {
+            if (this.options.excludeManifestInjection) {
+              tags = tags.filter(tag => tag.indexOf("manifest.json") < 0);
+            }
             const idx = (htmlPluginData.html + '</head>').search(/<\/head>/i);
             htmlPluginData.html = [htmlPluginData.html.slice(0, idx), ...tags, htmlPluginData.html.slice(idx)].join('');
           }
