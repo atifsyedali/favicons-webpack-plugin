@@ -72,6 +72,9 @@ module.exports = class FaviconsWebpackPlugin {
       
       // Hook into the html-webpack-plugin processing and add the html
       tapHtml(compilation, 'FaviconsWebpackPlugin', (htmlPluginData, htmlWebpackPluginCallback) => {
+        if (this.options.excludeManifestInjection) {
+          tags = tags.filter(tag => tag.indexOf("manifest.json") < 0);
+        }
         faviconCompilation.then((tags) => {
           if (this.options.inject(htmlPluginData.plugin)) {
             const idx = (htmlPluginData.html + '</head>').search(/<\/head>/i);
