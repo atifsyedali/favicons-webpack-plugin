@@ -1,6 +1,6 @@
 {
   "name": "favicons-webpack-plugin-ex",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Let webpack generate all your favicons and icons for you",
   "main": "src/index.js",
   "files": [
@@ -55,7 +55,7 @@
   "dependencies": {
     "cache-loader": "^3.0.1",
     "camelcase": "^5.3.1",
-    "favicons": "5.4.1",
+    "favicons": ">= 6.2.0",
     "find-cache-dir": "^2.1.0",
     "find-root": "^1.1.0",
     "loader-utils": "^1.2.3",
