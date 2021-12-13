@@ -4,11 +4,15 @@ Favicons Webpack Plugin
 
 Leverages on [favicons](https://github.com/haydenbleasel/favicons) to automatically generate your favicons for you.
 
+## Changes from fork
+
+- See excludeManifestInjection option below.
+
 ## Installation
 
 Install the plugin with npm:
 ```shell
-$ npm install --save-dev favicons-webpack-plugin
+$ npm install --save-dev favicons-webpack-plugin-ex
 ```
 
 ## Zero Config Usage
@@ -19,7 +23,7 @@ Add your base logo as `logo.png` file to you webpack context folder.
 Add the plugin to your webpack config as follows:
 
 ```javascript
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin-ex')
 
 plugins: [
   new FaviconsWebpackPlugin()
@@ -31,7 +35,7 @@ plugins: [
 Add the plugin to your webpack config as follows:
 
 ```javascript
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin-ex')
 
 ...
 
@@ -167,7 +171,7 @@ to `null` the properties you want to omit.
 #### Basic
 
 ```javascript
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin-ex')
 
 plugins: [
   new FaviconsWebpackPlugin({
@@ -196,7 +200,7 @@ To fine tune what icons/metadata is generated, refer to
 #### Handling Multiple HTML Files
 
 ```javascript
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin-ex')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { basename } = require('path')
 
